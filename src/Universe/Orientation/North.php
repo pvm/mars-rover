@@ -4,6 +4,11 @@ namespace NASA\Universe\Orientation;
 
 use NASA\Interfaces\Orientation;
 
+/**
+ * Class North
+ * @package NASA\Universe\Orientation
+ * @author Philippe Vanzin Moreira
+ */
 class North implements Orientation
 {
     /**

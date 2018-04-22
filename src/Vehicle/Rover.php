@@ -2,11 +2,16 @@
 
 namespace NASA\Vehicle;
 
-use NASA\Interfaces\{
-    Command, Surface, Vehicle
-};
+use NASA\Exceptions\InvalidPositionException;
+use NASA\Interfaces\{ Command, Surface, Vehicle };
 use NASA\Universe\Location;
 
+/**
+ * Class Rover
+ *
+ * @package NASA\Vehicle
+ * @author Philippe Vanzin Moreira
+ */
 class Rover implements Vehicle
 {
     /**
@@ -24,6 +29,13 @@ class Rover implements Vehicle
      */
     private $commands;
 
+    /**
+     * Rover constructor.
+     *
+     * @param Surface $surface
+     * @param Location $location
+     * @param array $commands
+     */
     public function __construct(Surface $surface, Location $location, array $commands)
     {
         $this->surface = $surface;
@@ -66,18 +78,18 @@ class Rover implements Vehicle
     }
 
     /**
-     * @throws \Exception
+     * Move the rover
+     *
+     * @throws InvalidPositionException
      */
     public function move(): Vehicle
     {
         $nextCoordinate = $this->location->getNextCoordinate();
         if (!$this->surface->isValidPosition($nextCoordinate)) {
-            // TODO make another exception for thos
-            throw new \Exception('Invalid Position for rover Movement');
+            throw new InvalidPositionException();
         }
 
         $this->location->updateCoordinate($nextCoordinate);
-
         return $this;
     }
 

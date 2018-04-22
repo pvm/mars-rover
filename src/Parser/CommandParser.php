@@ -5,6 +5,12 @@ namespace NASA\Parser;
 use NASA\Exceptions\InvalidCommandException;
 use NASA\Vehicle\Command\{ MoveForwardCommand, RotateLeftCommand, RotateRightCommand };
 
+/**
+ * Class CommandParser
+ *
+ * @package NASA\Parser
+ * @author Philippe Vanzin Moreira
+ */
 class CommandParser
 {
     /**

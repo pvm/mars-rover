@@ -6,6 +6,12 @@ use NASA\Exceptions\InvalidOrientationException;
 use NASA\Interfaces\Orientation;
 use NASA\Universe\Orientation\{ East, North, South, West};
 
+/**
+ * Class OrientationParser
+ *
+ * @package NASA\Parser
+ * @author Philippe Vanzin Moreira
+ */
 class OrientationParser
 {
     private static $orientations = [

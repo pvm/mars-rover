@@ -3,15 +3,15 @@
 namespace NASA\Exceptions;
 
 /**
- * Class InvalidCommandException
+ * Class InvalidPositionException
  *
  * @package NASA\Exceptions
  * @author Philippe Vanzin Moreira
  */
-class InvalidCommandException extends \Exception
+class InvalidPositionException extends \Exception
 {
     public function __construct()
     {
-        parent::__construct('Command provided is not valid');
+        parent::__construct('Invalid position for rover movement');
     }
 }

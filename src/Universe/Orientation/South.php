@@ -1,15 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: philippevm
- * Date: 21/04/2018
- * Time: 17:46
- */
 
 namespace NASA\Universe\Orientation;
 
 use NASA\Interfaces\Orientation;
 
+/**
+ * Class South
+ * @package NASA\Universe\Orientation
+ * @author Philippe Vanzin Moreira
+ */
 class South implements Orientation
 {
     /**

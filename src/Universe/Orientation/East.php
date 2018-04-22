@@ -4,6 +4,12 @@ namespace NASA\Universe\Orientation;
 
 use NASA\Interfaces\Orientation;
 
+/**
+ * Class East
+ *
+ * @package NASA\Universe\Orientation
+ * @author Philippe Vanzin Moreira
+ */
 class East implements Orientation
 {
     /**

@@ -2,6 +2,11 @@
 
 namespace NASA\Exceptions;
 
+/**
+ * Class InvalidOrientationException
+ * @package NASA\Exceptions
+ * @author Philippe Vanzin Moreira
+ */
 class InvalidOrientationException extends \Exception
 {
     public function __construct()
