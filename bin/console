@@ -1,0 +1,12 @@
+#!/usr/bin/env php
+
+<?php
+require_once __DIR__ . '/../vendor/autoload.php';
+
+try {
+    $app = new Symfony\Component\Console\Application();
+    $app->add(new NASA\Commands\RoverManagerCommand);
+    $app->run();
+} catch (\Exception $e) {
+    echo 'Console application could not be executed.' . PHP_EOL;
+}
