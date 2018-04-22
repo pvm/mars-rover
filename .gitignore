@@ -1,3 +1,4 @@
 tests/codeCoverage/*
 .idea/*
 vendor/*
+phpunit.xml
