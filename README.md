@@ -87,7 +87,8 @@ $ ./bin/console rover-manager
 ### Using Docker
 
 ```bash
-$
+$ docker-compose --project-name philippevm build
+$ docker run -it philippevm_rover bin/console rover-manager
 ```
 
 # Test
@@ -107,5 +108,6 @@ $ composer test
 If you are using docker for application and not running PHP on your local machine please run the following commmand:
 
 ```bash
-$
+$ docker-compose --project-name philippevm build
+$ docker run -it philippevm_rover vendor/bin/simple-phpunit
 ```
