@@ -31,7 +31,7 @@ class RoverTest extends TestCase
      */
     public function setUp()
     {
-        $surface = new Mars(5, 5);
+        $surface = new Mars(new Coordinate(5, 5));
         $coordinate = new Coordinate(1, 3);
         $this->location = new Location($coordinate, new North());
 

@@ -30,7 +30,7 @@ class RoverManagerTest extends TestCase
      */
     public function setUp()
     {
-        $this->surface = new Mars(5, 5);
+        $this->surface = new Mars(new Coordinate(5, 5));
         $this->object = new RoverManager($this->surface);
     }
 

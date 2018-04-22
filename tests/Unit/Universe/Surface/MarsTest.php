@@ -19,11 +19,17 @@ class MarsTest extends TestCase
     public $object;
 
     /**
+     * @var Coordinate
+     */
+    public $coordinate;
+
+    /**
      * @throws \NASA\Exceptions\InvalidSurfaceFinalCoordinateException
      */
     public function setUp()
     {
-        $this->object = new Mars($this->x, $this->y);
+        $this->coordinate = new Coordinate($this->x, $this->y);
+        $this->object = new Mars($this->coordinate);
     }
 
     /**
@@ -31,7 +37,8 @@ class MarsTest extends TestCase
      */
     public function testShouldBreakWhenXIsLowerThenOne()
     {
-        $object = new Mars(0, 1);
+        $coordinate = new Coordinate(0, 1);
+        $object = new Mars($coordinate);
     }
 
     /**
@@ -39,13 +46,14 @@ class MarsTest extends TestCase
      */
     public function testShouldBreakWhenYIsLowerThenOne()
     {
-        $object = new Mars(1, 0);
+        $coordinate = new Coordinate(1, 0);
+        $object = new Mars($coordinate);
     }
 
     public function testShouldInitializeWithXAndYPoints()
     {
-        $this->assertAttributeEquals($this->x, 'coordinateFinalX', $this->object);
-        $this->assertAttributeEquals($this->y, 'coordinateFinalY', $this->object);
+        $this->assertAttributeEquals($this->coordinate, 'upperRight', $this->object);
+        $this->assertAttributeEquals(new Coordinate(0, 0), 'bottomLeft', $this->object);
     }
 
     public function testShouldReturnTheXLimit()

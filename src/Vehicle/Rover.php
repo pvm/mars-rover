@@ -41,6 +41,11 @@ class Rover implements Vehicle
         return $this->location;
     }
 
+    /**
+     * Rotate 90 degrees to left
+     *
+     * @return Vehicle
+     */
     public function rotateToLeft(): Vehicle
     {
         $this->location->rotateToLeft();
@@ -48,6 +53,11 @@ class Rover implements Vehicle
         return $this;
     }
 
+    /**
+     * Rotate 90 degrees to right
+     *
+     * @return Vehicle
+     */
     public function rotateToRight(): Vehicle
     {
         $this->location->rotateToRight();
@@ -71,6 +81,11 @@ class Rover implements Vehicle
         return $this;
     }
 
+    /**
+     * Execute the commands defined for this rover
+     *
+     * @return Vehicle
+     */
     public function executeCommands(): Vehicle
     {
         foreach ($this->commands as $command)

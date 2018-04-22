@@ -56,7 +56,9 @@ final class RoverManagerCommand extends Command
 
             // Get the surface size
             $surfaceSize = $this->surfaceQuestion($helper, $input, $output);
-            $this->surface = new Mars($surfaceSize[0], $surfaceSize[1]);
+            $surfaceCoordinates = new Coordinate($surfaceSize[0], $surfaceSize[1]);
+
+            $this->surface = new Mars($surfaceCoordinates);
             $this->manager = new \NASA\RoverManager($this->surface);
 
             // Ask for rovers informations

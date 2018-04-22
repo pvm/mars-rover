@@ -3,10 +3,7 @@
 namespace NASA\Universe;
 
 use NASA\Interfaces\Orientation;
-use NASA\Universe\Orientation\East;
-use NASA\Universe\Orientation\North;
-use NASA\Universe\Orientation\South;
-use NASA\Universe\Orientation\West;
+use NASA\Universe\Orientation\{ East, North, South, West };
 
 /**
  * Class Location

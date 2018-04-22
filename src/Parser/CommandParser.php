@@ -8,7 +8,7 @@ use NASA\Vehicle\Command\{ MoveForwardCommand, RotateLeftCommand, RotateRightCom
 class CommandParser
 {
     /**
-     * Allowed commands provided from NASA
+     * Allowed commands provided by NASA
      * @var array
      */
     private static $allowedCommands = [

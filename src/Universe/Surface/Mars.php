@@ -15,25 +15,35 @@ use NASA\Universe\Coordinate;
  */
 class Mars implements Surface
 {
-    private $coordinateFinalX;
-    private $coordinateFinalY;
+    /**
+     * Generally 0, 0
+     *
+     * @var Coordinate
+     */
+    private $bottomLeft;
+
+    /**
+     * The limit of the Mars Surface
+     *
+     * @var Coordinate
+     */
+    private $upperRight;
 
     /**
      * Mars Surface constructor.
      *
-     * @param int $x
-     * @param int $y
+     * @param Coordinate $upperRight
      * @throws InvalidSurfaceFinalCoordinateException
      */
-    public function __construct(int $x, int $y)
+    public function __construct(Coordinate $upperRight)
     {
         // The surface needs to be at least 1x1
-        if ($x < 1 || $y < 1) {
+        if ($upperRight->getX() < 1 || $upperRight->getY() < 1) {
             throw new InvalidSurfaceFinalCoordinateException;
         }
 
-        $this->coordinateFinalX = $x;
-        $this->coordinateFinalY = $y;
+        $this->upperRight = $upperRight;
+        $this->bottomLeft = new Coordinate(0, 0);
     }
 
     /**
@@ -43,7 +53,7 @@ class Mars implements Surface
      */
     public function getLimitX(): int
     {
-        return $this->coordinateFinalX;
+        return $this->upperRight->getX();
     }
 
     /**
@@ -53,7 +63,7 @@ class Mars implements Surface
      */
     public function getLimitY(): int
     {
-        return $this->coordinateFinalY;
+        return $this->upperRight->getY();
     }
 
     /**
