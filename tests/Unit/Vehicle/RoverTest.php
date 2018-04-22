@@ -4,11 +4,8 @@ declare(strict_types=1);
 namespace NASA\Tests\Unit\Vehicles;
 
 use NASA\Parser\CommandParser;
-use NASA\Universe\Coordinate;
-use NASA\Universe\Location;
-use NASA\Universe\Orientation\East;
-use NASA\Universe\Orientation\North;
-use NASA\Universe\Orientation\West;
+use NASA\Universe\{ Coordinate, Location};
+use NASA\Universe\Orientation\{ East, North, West};
 use NASA\Universe\Surface\Mars;
 use NASA\Vehicle\Rover;
 use PHPUnit\Framework\TestCase;
