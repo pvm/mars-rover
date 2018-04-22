@@ -1,11 +1,11 @@
 env:
   global:
-    - CC_TEST_REPORTER_ID=f9f25e41cbe92adae99e80926f3f13b66c404d9a25e6ca27c4afb79c73181ec2
+    - CC_TEST_REPORTER_ID=4c74221fe8816404035072a02c9b7379200f6c47e2759f6ccd1d55cf77ee9f64
 
 language: php
 
 php:
-  - '7.1'
+  - '7.2'
 
 sudo: false
 
@@ -20,7 +20,7 @@ before_script:
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 
-script: ./bin/phpunit
+script: composer test
 
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
